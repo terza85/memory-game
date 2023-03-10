@@ -5,7 +5,10 @@ body {
 img {
   pointer-events: none;
 }
-
+.text-align {
+  text-align: center;
+  color: #fff;
+}
 .cards-container {
   margin: 28px auto;
 	width: max-content;
