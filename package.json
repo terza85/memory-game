@@ -6,9 +6,10 @@
   "name": "memory-game",
   "version": "1.0.0",
   "description": "Memory game",
-  "main": "script.js",
+  "default": "index.html",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html  --dist-dir ./dist"
   },
   "author": "Marko Terzic",
   "license": "ISC",
