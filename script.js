@@ -2,11 +2,17 @@
 import * as images from './img/*.jpg';
 
 const cardContainer = document.querySelector('.cards-container');
+const player1 = document.querySelector('.player-1');
+const player2 = document.querySelector('.player-2');
+let player1El = document.querySelector('.el1');
+let player2El = document.querySelector('.el2');
+let player1Score = 0;
+let player2Score = 0;
 const arr = [];
 let arrFull = []
 const btn = document.querySelectorAll('.btn');
-let numOfClickEl = document.querySelector('.click');
-let numOfClicks = 0;
+// let numOfClickEl = document.querySelector('.click');
+// let numOfClicks = 0;
 let firstClicked;
 let secondClicked;
 let firstEl;
@@ -79,7 +85,13 @@ cardContainer.addEventListener('click', function (e) {
     if (firstClicked == secondClicked) {
       firstEl.style.transform = 'scale(0.0)';
       secondEl.style.transform = 'scale(0.0)';
-      numOfClicks++;
+      player1.classList.contains("active") ? player1Score++ : player2Score++;
+
+      player1El.textContent = '';
+      player1El.insertAdjacentText("afterbegin", +player1Score);
+      player2El.textContent = '';
+      player2El.insertAdjacentText("afterbegin", +player2Score);
+
       setTimeout(function () {
         firstEl.firstElementChild.remove();
         secondEl.firstElementChild.remove();
@@ -89,8 +101,10 @@ cardContainer.addEventListener('click', function (e) {
 
 
     } else {
-      numOfClicks++;
+
       setTimeout(function () {
+        player1.classList.toggle("active");
+        player2.classList.toggle("active");
         firstEl.firstElementChild.style.transform = 'rotateY(0deg)';
         secondEl.firstElementChild.style.transform = 'rotateY(0deg)';
         firstEl.firstElementChild.firstElementChild.dataset.open = 0;
@@ -99,8 +113,7 @@ cardContainer.addEventListener('click', function (e) {
         secondClicked = undefined;
       }, 1000)
     }
-    numOfClickEl.textContent = '';
-    numOfClickEl.insertAdjacentText("afterbegin", +numOfClicks);
+
   }
   else {
     cardClicked.style.transform = 'rotateY(0deg)';
