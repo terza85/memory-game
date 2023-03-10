@@ -1,0 +1,104 @@
+body {
+  background: rgb(4,59,10);
+  background: linear-gradient(90deg, rgba(4,59,10,1) 0%, rgba(9,121,65,0.835171568627451) 53%, rgba(21,139,38,1) 73%);
+}
+img {
+  pointer-events: none;
+}
+
+.cards-container {
+  margin: 28px auto;
+	width: max-content;
+	display: grid;
+	grid-template-columns: repeat(6, 100px);
+	gap: 10px;
+	box-sizing: border-box;
+}
+
+/* .cards-container {
+    flex-wrap: wrap;
+    color: #fff;
+    font-family: 'Roboto Mono', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 1200px;
+    height: 100vh;
+} */
+
+.card-container {
+    width: 100px;
+    height: 150px;
+    transition: transform 1s;
+    perspective: 800px;
+  }
+  
+  .card-container:hover > .card {
+    cursor: pointer;
+  }
+  
+  .card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+
+  }
+  
+  .front,
+  .back {
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .front {
+
+    transform: rotateY(180deg);
+    transition: transform 44s;
+  }
+  
+  .back {
+    background-image: url("img/card-back.jpg"); /* The image used */
+
+  }
+.front img {
+  border-radius: 1rem;
+}
+
+
+.numOfCards {
+  border: 1px solid red;
+  text-align: center;
+}
+
+.btn {
+  background-color: red;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.players-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.player {
+  text-align: center;
+  color: #fff;
+  border: 1px solid red;
+  width: 50%;
+}

@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "parcel": "^2.8.3",
+    "parcel-plugin-static-files-copy": "^2.6.0"
+  },
+  "name": "memory-game",
+  "version": "1.0.0",
+  "description": "Memory game",
+  "main": "script.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "author": "Marko Terzic",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/resolver-glob": "^2.8.3"
+  }
+}
