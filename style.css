@@ -2,6 +2,7 @@ body {
   background: rgb(4,59,10);
   background: linear-gradient(90deg, rgba(4,59,10,1) 0%, rgba(9,121,65,0.835171568627451) 53%, rgba(21,139,38,1) 73%);
 }
+
 img {
   pointer-events: none;
 }
@@ -80,7 +81,6 @@ img {
 
 
 .numOfCards {
-  border: 1px solid red;
   text-align: center;
 }
 
@@ -112,6 +112,8 @@ img {
   font-size: 19px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -130,12 +132,31 @@ img {
 }
 
 .player {
+  font-size: 24px;
+  background-color: #bfbf0599;
   text-align: center;
-  color: black;
-  border: 1px solid red;
-  width: 50%;
+  color: #363a36;
+  width: 30%;
+  border-radius: 5px;
+  padding: 30px 0px;
+  max-height: 300px;
+}
+
+.player img {
+  border-radius: 50%;
+  width: 30%;
+}
+
+.player span {
+  font-size: 28px;
+  font-weight: 600;
 }
 
 .active {
-  color: #fff !important;
+  background-color: #e5e505;
+}
+
+
+.temp {
+  display: flex;
 }

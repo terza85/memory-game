@@ -22,7 +22,7 @@ let secondEl;
 
 btn.forEach(btn => btn.addEventListener('click', function (e) {
   const num = e.target.textContent
-  btn.parentElement.style.display = 'none';
+  // btn.parentElement.style.display = 'none';
   createCards(num)
   for (let i = 0; i < num / 2; i++) {
     console.log(i + 1);

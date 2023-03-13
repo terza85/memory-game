@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet"> 
     <script type="module" defer src="script.js"></script>
     <title>Memory game</title>
 </head>
-<h1 class="text-align">Pick number of cars</h1>
+    <h1 class="text-align">Pick number of cards</h1>
     <div class="numOfCards">
         
         <button class="btn">10</button>
@@ -18,19 +21,34 @@
         <button class="btn">18</button>
         <button class="btn">20</button>
     </div>
-    <div class="cards-container">
-
-    </div>
-    <div class="players-container">
+    <div class="temp">
         <div class="player player-1 active">
-            <h1>Player 1</h1>
+            <img src="img/traktor.png" alt="">
+            <h1>Davor</h1>
             <div class="clicks">You have: <span class="el1">0</span> pair</div>
         </div>
+        <div class="cards-container">
+
+        </div>
         <div class="player player-2">
-            <h1>Player 2</h1>
+            <img src="img/bager.png" alt="">
+            <h1>Leonardo</h1>
             <div class="clicks">You have: <span class="el2">0</span> pair</div>
         </div>
     </div>
+
+    <!-- <div class="players-container">
+        <div class="player player-1 active">
+            <img src="img/traktor.png" alt="">
+            <h1>PLAYER 1</h1>
+            <div class="clicks">You have: <span class="el1">0</span> pair</div>
+        </div>
+        <div class="player player-2">
+            <img src="img/bager.png" alt="">
+            <h1>PLAYER 2</h1>
+            <div class="clicks">You have: <span class="el2">0</span> pair</div>
+        </div>
+    </div> -->
 
      
     </body>
