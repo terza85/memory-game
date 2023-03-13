@@ -84,7 +84,7 @@ img {
   text-align: center;
 }
 
-.btn {
+/* .btn {
   background-color: rgb(245, 183, 0);
   color: #fff;
   width: 40px;
@@ -92,6 +92,36 @@ img {
   border: none;
   border-radius: 25px;
   cursor: pointer;
+} */
+
+.btn {
+  background: #f5b800;
+  background-image: -webkit-linear-gradient(top, #f5b800, #f5b803);
+  background-image: -moz-linear-gradient(top, #f5b800, #f5b803);
+  background-image: -ms-linear-gradient(top, #f5b800, #f5b803);
+  background-image: -o-linear-gradient(top, #f5b800, #f5b803);
+  background-image: linear-gradient(to bottom, #f5b800, #f5b803);
+  -webkit-border-radius: 25;
+  -moz-border-radius: 25;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 1px 23px #c7c7c7;
+  -moz-box-shadow: 0px 1px 23px #c7c7c7;
+  box-shadow: 0px 1px 23px #c7c7c7;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 19px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #f2dd9e;
+  background-image: -webkit-linear-gradient(top, #f2dd9e, #e0c789);
+  background-image: -moz-linear-gradient(top, #f2dd9e, #e0c789);
+  background-image: -ms-linear-gradient(top, #f2dd9e, #e0c789);
+  background-image: -o-linear-gradient(top, #f2dd9e, #e0c789);
+  background-image: linear-gradient(to bottom, #f2dd9e, #e0c789);
+  text-decoration: none;
 }
 
 .players-container {
