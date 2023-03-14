@@ -6,10 +6,12 @@ body {
 img {
   pointer-events: none;
 }
+
 .text-align {
   text-align: center;
   color: #fff;
 }
+
 .cards-container {
   margin: 28px auto;
 	width: max-content;
@@ -18,20 +20,6 @@ img {
 	gap: 10px;
 	box-sizing: border-box;
 }
-
-/* .cards-container {
-    flex-wrap: wrap;
-    color: #fff;
-    font-family: 'Roboto Mono', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    overflow: hidden;
-    margin: 0 auto;
-    width: 1200px;
-    height: 100vh;
-} */
 
 .card-container {
     width: 100px;
@@ -50,7 +38,6 @@ img {
     position: relative;
     transition: transform 1s;
     transform-style: preserve-3d;
-
   }
   
   .front,
@@ -65,34 +52,20 @@ img {
     background-size: cover;
   }
   
-  .front {
-
+.front {
     transform: rotateY(180deg);
-    transition: transform 44s;
   }
   
-  .back {
-    background-image: url("img/card-back.jpg"); /* The image used */
-
+.back {
+  background-image: url("img/card-back.jpg"); /* The image used */
   }
 .front img {
   border-radius: 1rem;
 }
 
-
 .numOfCards {
   text-align: center;
 }
-
-/* .btn {
-  background-color: rgb(245, 183, 0);
-  color: #fff;
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-} */
 
 .btn {
   background: #f5b800;
@@ -126,6 +99,10 @@ img {
   text-decoration: none;
 }
 
+.game-container {
+  display: flex;
+}
+
 .players-container {
   display: flex;
   justify-content: space-around;
@@ -140,11 +117,14 @@ img {
   border-radius: 5px;
   padding: 30px 0px;
   max-height: 300px;
+  overflow: hidden;
+  transition: background-color 1.5s;
 }
 
 .player img {
-  border-radius: 50%;
   width: 30%;
+  display: inline-block;
+  position: relative;
 }
 
 .player span {
@@ -153,10 +133,52 @@ img {
 }
 
 .active {
+  transition: all 1.5s;
   background-color: #e5e505;
 }
 
-
-.temp {
-  display: flex;
+.player-1 img {
+  animation-name: movePlayer1Out;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
 }
+
+.player-1.active img {
+  opacity: 1;
+  animation-name: movePlayer1in;
+  animation-duration: 3s;
+}
+@keyframes movePlayer1in {
+  0% {right: 70%; transform: rotate(0deg);}
+  45% {transform: rotate(-15deg);}
+  100% {right: 0%; transform: rotate(0deg);}
+}
+
+@keyframes movePlayer1Out {
+  0% {right: 0%; transform: rotate(0deg);}
+  100% {right: -70%; transform: rotate(-15deg);}
+}
+.player-2 img {
+  animation-name: movePlayer2Out;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+.player-2.active img {
+  opacity: 1;
+  animation-name: movePlayer2In;
+  animation-duration: 3s;
+}
+
+@keyframes movePlayer2In {
+  0% {right: -70%; transform: rotate(0deg);}
+  45% {transform: rotate(20deg);}
+  100% {right: 0%; transform: rotate(0deg);}
+}
+@keyframes movePlayer2Out {
+  0% {right: 0%;   transform: rotate(20deg);}
+  100% {right: 70%;   transform: rotate(0deg);}
+}
+
+
+
+
