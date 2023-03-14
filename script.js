@@ -1,6 +1,7 @@
 'use strict'
 import * as images from './img/*.jpg';
 
+const headContent = document.querySelector('.pickGame')
 const cardContainer = document.querySelector('.cards-container');
 const winBtn = document.querySelector('.playAgain')
 const player1 = document.querySelector('.player-1');
@@ -20,8 +21,15 @@ let secondEl;
 // Izabran broj karata
 
 btn.forEach(btn => btn.addEventListener('click', function (e) {
-  const num = e.target.textContent
-  btn.parentElement.style.display = 'none';
+  console.log(headContent);
+  const num = e.target.textContent;
+  const headEl = `
+    <p class="number">You have chosen a game with ${num} cards</p>
+    `;
+  headContent.textContent = '';
+  headContent.insertAdjacentHTML('beforeend', headEl)
+
+  // btn.parentElement.style.display = 'none';
   createCards(num)
   for (let i = 0; i < num / 2; i++) {
     arr.push(i + 1);
@@ -132,13 +140,13 @@ cardContainer.addEventListener('click', function (e) {
 const player1Win = () => {
   console.log('Pobedio player 1');
   player1.classList.add("active");
-  player1.lastElementChild.textContent = 'BRAVOO 🏆🏆🏆'
+  player1.lastElementChild.textContent = 'WINNER 🏆🏆🏆'
 }
 
 const player2Win = () => {
   console.log('Pobedio player 2');
   player1.classList.add("active");
-  player2.lastElementChild.textContent = 'BRAVOO 🏆🏆🏆'
+  player2.lastElementChild.textContent = 'WINNER 🏆🏆🏆'
 }
 
 // console.log(player1.lastElementChild.textContent);

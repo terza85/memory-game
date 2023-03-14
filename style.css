@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0;
+  }
 body {
   background: rgb(4,59,10);
   background: linear-gradient(90deg, rgba(4,59,10,1) 0%, rgba(9,121,65,0.835171568627451) 53%, rgba(21,139,38,1) 73%);
@@ -7,15 +11,30 @@ img {
   pointer-events: none;
 }
 
-.text-align {
+.pickGame {
+  position: relative;
+  background-color: #00000069;
+  height: 150px;
   text-align: center;
   color: #fff;
 }
+.pickGame h1 {
+  padding: 25px 0px 10px;
+}
+.number {
+  left: 50%;
+  top: 55px;
+  font-size: 30px;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
 
 .cards-container {
   position: relative;
   margin: auto;
 	width: max-content;
+  min-height: 360px;
 	display: grid;
 	grid-template-columns: repeat(6, 100px);
 	gap: 10px;
@@ -125,6 +144,9 @@ img {
   overflow: hidden;
   transition: background-color 1.5s;
 }
+.player h1 {
+  margin: 20px;
+}
 
 .player img {
   width: 30%;
@@ -185,10 +207,10 @@ img {
 }
 
 .winnerText {
-  position: relative;
   background-color: #10cf1073;
-  top: -10px;
   font-size: 35px;
+  position: relative;
+  top: 47px;
 }
 .playAgain {
   position: absolute;
