@@ -13,12 +13,15 @@ img {
 }
 
 .cards-container {
-  margin: 28px auto;
+  position: relative;
+  margin: auto;
 	width: max-content;
 	display: grid;
 	grid-template-columns: repeat(6, 100px);
 	gap: 10px;
 	box-sizing: border-box;
+  background-color: #ffb00036;
+  padding: 25px;
 }
 
 .card-container {
@@ -101,6 +104,7 @@ img {
 
 .game-container {
   display: flex;
+  margin-top: 30px;
 }
 
 .players-container {
@@ -109,6 +113,7 @@ img {
 }
 
 .player {
+  height:300px;
   font-size: 24px;
   background-color: #bfbf0599;
   text-align: center;
@@ -179,6 +184,19 @@ img {
   100% {right: 70%;   transform: rotate(0deg);}
 }
 
-
+.winnerText {
+  position: relative;
+  background-color: #10cf1073;
+  top: -10px;
+  font-size: 35px;
+}
+.playAgain {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  transition: transform 4s;
+}
 
 

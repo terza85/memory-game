@@ -2,6 +2,7 @@
 import * as images from './img/*.jpg';
 
 const cardContainer = document.querySelector('.cards-container');
+const winBtn = document.querySelector('.playAgain')
 const player1 = document.querySelector('.player-1');
 const player2 = document.querySelector('.player-2');
 let player1El = document.querySelector('.el1');
@@ -11,8 +12,6 @@ let player2Score = 0;
 const arr = [];
 let arrFull = []
 const btn = document.querySelectorAll('.btn');
-// let numOfClickEl = document.querySelector('.click');
-// let numOfClicks = 0;
 let firstClicked;
 let secondClicked;
 let firstEl;
@@ -22,10 +21,9 @@ let secondEl;
 
 btn.forEach(btn => btn.addEventListener('click', function (e) {
   const num = e.target.textContent
-  // btn.parentElement.style.display = 'none';
+  btn.parentElement.style.display = 'none';
   createCards(num)
   for (let i = 0; i < num / 2; i++) {
-    console.log(i + 1);
     arr.push(i + 1);
   }
   arrFull = [...arr, ...arr];
@@ -98,7 +96,14 @@ cardContainer.addEventListener('click', function (e) {
         firstClicked = undefined;
         secondClicked = undefined;
       }, 1000)
-
+      console.log(+player1Score + +player2Score, arr.length);
+      if (+player1Score + +player2Score === arr.length) {
+        +player1Score > +player2Score ? player1Win() : player2Win();
+        winBtn.style.display = 'block';
+        winBtn.addEventListener('click', function () {
+          location.reload()
+        })
+      }
 
     } else {
 
@@ -122,3 +127,18 @@ cardContainer.addEventListener('click', function (e) {
   }
 
 })
+
+
+const player1Win = () => {
+  console.log('Pobedio player 1');
+  player1.classList.add("active");
+  player1.lastElementChild.textContent = 'BRAVOO 🏆🏆🏆'
+}
+
+const player2Win = () => {
+  console.log('Pobedio player 2');
+  player1.classList.add("active");
+  player2.lastElementChild.textContent = 'BRAVOO 🏆🏆🏆'
+}
+
+// console.log(player1.lastElementChild.textContent);
